@@ -4,14 +4,14 @@ using System.Text;
 
 namespace TaskList
 {
-    class Task
+    class Job
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public string DueDate { get; set; }
         public bool Status { get; set; }
 
-        public Task(string Name, string Description, string DueDate, bool Status)
+        public Job(string Name, string Description, string DueDate, bool Status)
         {
             this.Name = Name;
             this.Description = Description;

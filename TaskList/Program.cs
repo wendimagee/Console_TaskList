@@ -114,6 +114,7 @@ namespace TaskList
                         if (userChoice == "5" || userChoice == "Quit")
                     {
                         goAgain = false;
+                        break;
                     }
                 }
                 catch (IndexOutOfRangeException e)
@@ -125,17 +126,24 @@ namespace TaskList
                 {
                     Console.WriteLine("Something went wrong, try again.");
                 }
-                Console.WriteLine("\n\nWould you like to continue?(y/n)");
-                char answer = char.Parse(Console.ReadLine());
-                if (char.ToLower(answer) == 'y')
+                try
                 {
-                    goAgain = true;
+                    Console.WriteLine("\n\nWould you like to continue?(y/n)");
+                    char answer = char.Parse(Console.ReadLine());
+                    if (char.ToLower(answer) == 'y')
+                    {
+                        goAgain = true;
+                    }
+                    else
+                    {
+                        goAgain = false;
+                    }
                 }
-                else
+                catch
                 {
-                    goAgain = false;
+                    Console.WriteLine(@"Please enter a ''y'' or a ''n'' ");
+                    continue;
                 }
-
             }
 
         }

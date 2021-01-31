@@ -12,18 +12,19 @@ namespace TaskList
             tasks.Add(new Job("Wendi", "Code a task manager", "Monday, 02/01/21", false));
             tasks.Add(new Job("Steve", "Grade Lab 6", "Monday, 02/01/21", false));
 
-            Console.WriteLine("Welcome to the Task Manager");
+            Console.WriteLine("\nWelcome to the Task Manager\n");
             bool goAgain = true;
 
             while (goAgain == true)
             {
+                Console.WriteLine("---Main Menu---");
                 Console.WriteLine("1. List Tasks");
                 Console.WriteLine("2. Add Task");
                 Console.WriteLine("3. Delete Task");
                 Console.WriteLine("4. Mark task Complete");
                 Console.WriteLine("5. Edit a task");
                 Console.WriteLine("6. Quit");
-                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("\nPlease choose an option by entering it's number: ");
                 try
                 {
                     string input = Console.ReadLine();
@@ -161,6 +162,7 @@ namespace TaskList
 
                     if (userChoice == "6" || userChoice == "Quit")
                         {
+                            Console.WriteLine("Goodbye! Have a great day!");
                             goAgain = false;
                             break;
                         }
@@ -170,15 +172,18 @@ namespace TaskList
                 {
                     Console.WriteLine(e.Message);
                     Console.WriteLine("You must enter a number from the list");
+                    Console.WriteLine();
                 }
                 catch (FormatException e)
                 {
                     Console.WriteLine(e.Message);
-                    Console.WriteLine(@"Please enter a ''y'' or an ''n'' ");
+                    Console.WriteLine(@"Please enter a ""y'' or an ""n"" ");
+                    Console.WriteLine();
                 }
                 catch
                 {
                     Console.WriteLine("Something went wrong, try again.");
+                    Console.WriteLine();
                 }
                 try
                 {
@@ -195,8 +200,8 @@ namespace TaskList
                 }
                 catch
                 {
-                    Console.WriteLine(@"Please enter a ''y'' or an ''n'' ");
-                    continue;
+                    Console.WriteLine(@"Please enter a ""y"" or an ""n"" ");
+                    Console.WriteLine();
                 }
             }
 
@@ -216,6 +221,7 @@ namespace TaskList
                 {
                     Console.WriteLine("    Task Status: Incomplete");
                 }
+                Console.WriteLine();
             }
         }
 
@@ -237,15 +243,17 @@ namespace TaskList
                         Console.WriteLine("    Task Status: Incomplete");
                     }
                 }
+                Console.WriteLine();
             }
         }
         public static void EditMenu()
         {
+            Console.WriteLine("---Task Edit Menu---");
             Console.WriteLine("\n1.Edit the task member name");
             Console.WriteLine("2.Edit the task description");
             Console.WriteLine("3.Edit the task due date");
             Console.WriteLine("4.Change task completion status");
-            Console.WriteLine("\nPlease choose an option by number: ");
+            Console.WriteLine("\nPlease choose an option by entering it's number: ");
 
         }
 

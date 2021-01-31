@@ -64,12 +64,22 @@ namespace TaskList
                         string input2 = Console.ReadLine();
                         int userChoice2 = Int32.Parse(input2) - 1;
                         //check if userchoice2 is in index
-                        if (userChoice2 > tasks.Count() || userChoice2 < 1)
+                        if (userChoice2 > tasks.Count() || userChoice2 < 0)
                         {
                             throw new IndexOutOfRangeException();
                         }
-
-                        tasks.RemoveAt(userChoice2 - 1);
+                        Console.WriteLine("Are you sure you want to delete this task? (y/n)");
+                        string choice = Console.ReadLine();
+                        string choice2 = choice.ToLower().Trim();
+                        if (choice2 == "y" || choice2 == "yes")
+                        {
+                            tasks.RemoveAt(userChoice2);
+                            Console.WriteLine("Task deleted successfully");
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
 
                     if (userChoice == "4" || userChoice == "Mark task complete")

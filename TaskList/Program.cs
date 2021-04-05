@@ -42,16 +42,16 @@ namespace TaskList
                     {
                         DeleteTask(tasks, goAgain);
                     }
-                    if (userChoice == "4" || userChoice == "Mark task complete")
+                    if (userChoice == "4" || userChoice == "mark task complete")
                     {
                         MarkComplete(tasks);
                     }
-                    if (userChoice == "5" || userChoice == "Edit a task")
+                    if (userChoice == "5" || userChoice == "edit a task")
                     {
                         EditTask(tasks, goAgain);
                     }
 
-                    if (userChoice == "6" || userChoice == "Quit")
+                    if (userChoice == "6" || userChoice == "quit")
                         {
                             Console.WriteLine("Goodbye! Have a great day!");
                             goAgain = false;
